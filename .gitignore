@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+._*
+
+# Editor
+.vscode/
+.idea/
+
+# Sensitive
+.env
+.env.local
+
+# Deployment
+node_modules/

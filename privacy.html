@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz — Lindeno</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --asphalt: #0F172A;
+    --off-white: #F1F5F9;
+    --lime: #A3E635;
+    --electric: #3B82F6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+    background: var(--off-white);
+    color: var(--asphalt);
+    line-height: 1.6;
+  }
+  nav {
+    padding: 20px 32px;
+    background: var(--asphalt);
+    color: var(--off-white);
+  }
+  .nav-logo {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
+  .nav-logo .dot { color: var(--lime); }
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 60px 32px 120px;
+  }
+  h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 48px;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .updated {
+    font-family: monospace;
+    font-size: 13px;
+    color: #64748B;
+    margin-bottom: 48px;
+  }
+  h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px;
+    margin: 40px 0 16px;
+    color: var(--asphalt);
+  }
+  h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 24px 0 12px;
+  }
+  p, li {
+    font-size: 16px;
+    color: #334155;
+    margin-bottom: 12px;
+  }
+  ul { padding-left: 24px; margin-bottom: 16px; }
+  strong { color: var(--asphalt); }
+  a { color: var(--electric); }
+  hr { border: 0; border-top: 1px solid #E2E8F0; margin: 32px 0; }
+  .contact-box {
+    background: #F1F5F9;
+    border-left: 4px solid var(--lime);
+    padding: 20px 24px;
+    border-radius: 4px;
+    margin: 32px 0;
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="nav-logo">LINDENO<span class="dot">.</span></div></nav>
+
+<main>
+  <h1>Datenschutzerklärung</h1>
+  <div class="updated">Stand: 22.07.2026</div>
+
+  <h2>1. Verantwortlicher</h2>
+  <p>Verantwortlich für die Datenverarbeitung im Sinne der DSGVO ist:</p>
+  <div class="contact-box">
+    <strong>Patrick Tattermann</strong><br>
+    [Straße Nr.]<br>
+    30449 Hannover<br>
+    E-Mail: <a href="mailto:hello@lindeno.app">hello@lindeno.app</a>
+  </div>
+
+  <h2>2. Welche Daten wir erheben</h2>
+
+  <h3>2.1 Registrierungsdaten</h3>
+  <ul>
+    <li>E-Mail-Adresse (für Login und Passwort-Reset)</li>
+    <li>Anzeigename (frei wählbar, muss nicht dein echter Name sein)</li>
+    <li>Optional: Profilbild, Community-Zugehörigkeit</li>
+  </ul>
+
+  <h3>2.2 Spiel- und Nutzungsdaten</h3>
+  <ul>
+    <li>Match-Ergebnisse (Score, Gegner, Zeitpunkt)</li>
+    <li>ELO-Ranking und Statistiken</li>
+    <li>GPS-Standort (nur wenn du QR-Sticker scannst oder Tische in der Nähe suchst — wird nicht dauerhaft gespeichert)</li>
+    <li>Push-Notification-Token (für Match-Benachrichtigungen)</li>
+    <li>Community-Mitgliedschaften</li>
+  </ul>
+
+  <h3>2.3 Technische Daten</h3>
+  <ul>
+    <li>Geräte-ID (anonymisiert)</li>
+    <li>App-Version, Betriebssystem</li>
+    <li>Fehler- und Absturzberichte (via Sentry, ohne persönliche Daten)</li>
+  </ul>
+
+  <h2>3. Warum wir diese Daten erheben (Rechtsgrundlage)</h2>
+  <ul>
+    <li><strong>Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO):</strong> Um dir die App-Funktionen bereitzustellen (Matches spielen, Ranking berechnen, Community-Teilnahme).</li>
+    <li><strong>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO):</strong> Um die App stabil zu halten (Crash-Reports), Missbrauch zu verhindern (Anti-Cheat), Push-Notifications zu versenden.</li>
+    <li><strong>Einwilligung (Art. 6 Abs. 1 lit. a DSGVO):</strong> Für optionale Features wie Standortfreigabe, Push-Benachrichtigungen, Marketing-Kommunikation.</li>
+  </ul>
+
+  <h2>4. An wen wir Daten weitergeben</h2>
+  <p>Wir geben Daten nur an folgende technische Dienstleister weiter, die für den Betrieb der App notwendig sind:</p>
+  <ul>
+    <li><strong>Supabase Inc.</strong> (EU-Region Frankfurt) — Datenbank, Authentication, Storage. <a href="https://supabase.com/privacy" target="_blank">Datenschutzerklärung</a></li>
+    <li><strong>Expo Inc.</strong> (USA, Standard-Vertragsklauseln) — Push-Notification-Versand, Build-Service. <a href="https://expo.dev/privacy" target="_blank">Datenschutzerklärung</a></li>
+    <li><strong>Sentry (Functional Software Inc.)</strong> (USA, Standard-Vertragsklauseln) — Fehler-Tracking, ohne persönliche Daten. <a href="https://sentry.io/privacy/" target="_blank">Datenschutzerklärung</a></li>
+    <li><strong>Resend Inc.</strong> (USA, Standard-Vertragsklauseln) — Versand von transaktionalen E-Mails (Passwort-Reset). <a href="https://resend.com/legal/privacy-policy" target="_blank">Datenschutzerklärung</a></li>
+    <li><strong>Hetzner Online GmbH</strong> (Deutschland) — Hosting unseres Kartendienstes.</li>
+    <li><strong>Apple Inc.</strong> und <strong>Google LLC</strong> — App-Distribution über App Store und Play Store.</li>
+  </ul>
+  <p>Deine Daten werden <strong>nicht an Werbe-Netzwerke</strong> oder <strong>Datenhändler</strong> verkauft oder weitergegeben.</p>
+
+  <h2>5. Wie lange wir Daten speichern</h2>
+  <ul>
+    <li>Account-Daten: solange dein Account besteht.</li>
+    <li>Match-Daten: unbegrenzt (für langfristiges Ranking), auf Wunsch aber löschbar.</li>
+    <li>Standortdaten: nicht dauerhaft gespeichert.</li>
+    <li>Crash-Reports: 30 Tage.</li>
+  </ul>
+
+  <h2>6. Deine Rechte</h2>
+  <p>Nach DSGVO hast du folgende Rechte:</p>
+  <ul>
+    <li><strong>Auskunft</strong> über deine gespeicherten Daten (Art. 15 DSGVO)</li>
+    <li><strong>Berichtigung</strong> falscher Daten (Art. 16 DSGVO)</li>
+    <li><strong>Löschung</strong> deiner Daten (Art. 17 DSGVO)</li>
+    <li><strong>Einschränkung</strong> der Verarbeitung (Art. 18 DSGVO)</li>
+    <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+    <li><strong>Widerspruch</strong> gegen Verarbeitung (Art. 21 DSGVO)</li>
+    <li><strong>Widerruf</strong> erteilter Einwilligungen jederzeit</li>
+    <li><strong>Beschwerde</strong> bei einer Aufsichtsbehörde (z.B. dem Landesbeauftragten für Datenschutz Niedersachsen)</li>
+  </ul>
+  <p>Zur Ausübung dieser Rechte: E-Mail an <a href="mailto:hello@lindeno.app">hello@lindeno.app</a>. Wir antworten innerhalb von 30 Tagen.</p>
+
+  <h2>7. Account löschen</h2>
+  <p>Du kannst deinen Account jederzeit selbst in der App unter <em>Einstellungen → Account → Account löschen</em> permanent entfernen. Alle personenbezogenen Daten werden dabei unwiderruflich gelöscht, anonymisierte Match-Statistiken bleiben ggf. für Ranking-Historie erhalten.</p>
+
+  <h2>8. Cookies und Tracking</h2>
+  <p>Die Mobile-App verwendet <strong>keine Cookies</strong>. Diese Website (lindeno.app) verwendet ausschließlich technisch notwendige Session-Cookies. Keine Werbe- oder Analytics-Cookies.</p>
+
+  <h2>9. Änderungen dieser Erklärung</h2>
+  <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich rechtliche Anforderungen ändern oder wir neue Features einführen. Bei wesentlichen Änderungen informieren wir dich per E-Mail oder In-App-Benachrichtigung.</p>
+
+  <hr>
+  <p style="text-align: center; color: #64748B; font-size: 14px;">
+    Fragen? Kontaktier uns unter <a href="mailto:hello@lindeno.app">hello@lindeno.app</a>
+  </p>
+</main>
+
+</body>
+</html>

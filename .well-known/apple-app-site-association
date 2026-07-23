@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "7NS4R59RCG.app.lindeno.client",
+        "paths": [
+          "/s/*",
+          "/sticker/*",
+          "/match/*",
+          "/community/*",
+          "/tournament/*",
+          "/profile/*",
+          "/join/*"
+        ]
+      }
+    ]
+  }
+}
