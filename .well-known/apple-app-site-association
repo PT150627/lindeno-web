@@ -5,6 +5,7 @@
       {
         "appID": "7NS4R59RCG.app.lindeno.client",
         "paths": [
+          "/c/*",
           "/s/*",
           "/sticker/*",
           "/match/*",

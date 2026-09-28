@@ -1,4 +1,8 @@
-/privacy  /privacy.html  200
-/impressum  /impressum.html  200
-/datenschutz  /privacy.html  200
-/imprint  /impressum.html  200
+# Cloudflare Pages liefert privacy.html / impressum.html von sich aus unter
+# /privacy und /impressum aus und leitet /privacy.html -> /privacy um. Die
+# alten 200-Rewrites auf die .html-Dateien haben sich damit zu einer
+# Endlosschleife (ERR_TOO_MANY_REDIRECTS) aufgeschaukelt -- hier nur noch
+# die Aliase, die die App und aeltere Links nutzen.
+/datenschutz  /privacy    301
+/imprint      /impressum  301
+/agb          /impressum  301
