@@ -6,3 +6,12 @@
 /datenschutz  /privacy    301
 /imprint      /impressum  301
 /agb          /impressum  301
+
+# v129 (W4, 25.10.2026) -- QR-Code "Anstellen" der Tablet-Ansicht:
+# lindeno.app/t/<tisch-id>/join. Mit installierter App faengt iOS den Link
+# als Universal Link ab (AASA oben, Pfad /t/*) und oeffnet den Tisch mit
+# ?join=1. Ohne App landet der Scan hier im Browser -- dann zur Startseite
+# mit den Download-Knoepfen statt auf eine 404-Seite. Android-App-Links
+# brauchen assetlinks.json mit dem SHA256 des Signaturzertifikats (steht
+# noch aus, siehe README); bis dahin ist der Browserweg auch dort der Fall.
+/t/*  /  302
