@@ -37,8 +37,9 @@
   }
   h1 {
     font-family: 'Archivo Black', sans-serif;
-    font-size: 48px;
+    font-size: clamp(30px, 8.2vw, 48px);
     letter-spacing: -1.5px;
+    hyphens: manual;
     margin-bottom: 40px;
   }
   h2 {
@@ -59,23 +60,35 @@
 </head>
 <body>
 
-<nav><div class="nav-logo">LINDENO<span class="dot">.</span></div></nav>
+<nav><a href="/" aria-label="Lindeno – zur Startseite"><img src="/logo-dark.svg" alt="Lindeno" width="1985" height="243" style="display:block;height:26px;width:auto"></a></nav>
 
 <main>
   <h1>Impressum</h1>
 
-  <h2>Angaben gemäß § 5 TMG</h2>
   <div class="info-block">
-    <p><strong>Patrick Tattermann</strong><br>
-    [Straße Nr.]<br>
-    30449 Hannover<br>
+    <p><strong>Hinweis: Lindeno ist in der Beta-Testphase.</strong><br>
+    App und Website werden derzeit getestet. Funktionen können sich ändern, vorübergehend fehlen oder Fehler enthalten.</p>
+  </div>
+
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <div class="info-block">
+    <p><strong>Smartsecur GmbH</strong><br>
+    Am Großmarkt 2<br>
+    30453 Hannover<br>
     Deutschland</p>
   </div>
 
-  <h2>Kontakt</h2>
-  <p>E-Mail: <a href="mailto:hello@lindeno.app">hello@lindeno.app</a></p>
+  <h2>Vertreten durch</h2>
+  <p>Geschäftsführung: Patrick Tattermann</p>
 
-  <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+  <h2>Kontakt</h2>
+  <p>Telefon: <a href="tel:+491604444508">0160 4444508</a><br>
+  E-Mail: <a href="mailto:hello@lindeno.app">hello@lindeno.app</a></p>
+
+  <h2>Umsatzsteuer-ID</h2>
+  <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE343208944</p>
+
+  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
   <p>Patrick Tattermann (Anschrift wie oben)</p>
 
   <h2>EU-Streitschlichtung</h2>
@@ -84,7 +97,7 @@
   Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
 
   <h2>Haftung für Inhalte</h2>
-  <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+  <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
 
   <h2>Haftung für Links</h2>
   <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
