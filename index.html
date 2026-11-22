@@ -2,464 +2,215 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lindeno — Street Sport Club</title>
-<meta name="description" content="Vom Kiez zur Community. Finde Tischtennis- und Beach-Courts in deiner Nähe, spiele Matches, tritt Turnieren bei.">
-<meta property="og:title" content="Lindeno — Street Sport Club">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Lindeno — Mehr Sport. Mehr Gemeinschaft. Mehr Wir.</title>
+<meta name="description" content="Lindeno vernetzt Menschen, Vereine und Communities und macht lokalen Sport zum gemeinsamen Erlebnis. Jetzt in der Beta-Testphase.">
+<meta name="theme-color" content="#0B1533">
+<meta property="og:title" content="Lindeno — Mehr Sport. Mehr Gemeinschaft. Mehr Wir.">
 <meta property="og:description" content="Wir spielen, wo wir leben.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lindeno.app">
 <link rel="icon" href="/favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --asphalt: #0F172A;
-    --concrete: #1E293B;
-    --street: #334155;
-    --electric: #3B82F6;
-    --lime: #A3E635;
-    --linden: #65A30D;
-    --magenta: #EC4899;
-    --off-white: #F1F5F9;
-    --cream: #FAFAF9;
+    --navy: #0B1533;
+    --navy-deep: #060C20;
+    --blue: #2D7DF6;
+    --lime: #B2EB20;
+    --white: #FFFFFF;
+    --soft: #D5DBEA;
+    --muted: #9AA6C4;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html, body { height: 100%; }
   body {
-    font-family: 'Space Grotesk', -apple-system, sans-serif;
-    background: var(--asphalt);
-    color: var(--off-white);
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--navy-deep);
+    color: var(--white);
     line-height: 1.5;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; text-decoration: none; }
+  a:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; border-radius: 8px; }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    padding: 16px 32px;
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(10px);
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .nav-logo {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 24px;
-    letter-spacing: -1px;
-    color: var(--off-white);
-  }
-  .nav-logo .dot { color: var(--lime); }
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    font-size: 14px;
-    color: rgba(241, 245, 249, 0.7);
-  }
-  .nav-links a:hover { color: var(--lime); }
-
-  /* ── HERO ── */
-  .hero {
+  .page {
+    position: relative;
     min-height: 100vh;
-    padding: 120px 32px 80px;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
     overflow: hidden;
+    background:
+      radial-gradient(120% 90% at 50% 40%, #12224F 0%, var(--navy) 45%, var(--navy-deep) 100%);
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -20%; right: -10%;
-    width: 800px; height: 800px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -30%; left: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(163, 230, 53, 0.12) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-  }
-  .hero-kicker {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: var(--lime);
-    text-transform: uppercase;
-    margin-bottom: 32px;
-  }
-  .hero-wordmark {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(72px, 15vw, 200px);
-    line-height: 0.9;
-    letter-spacing: -6px;
-    color: var(--off-white);
-    margin-bottom: 24px;
-  }
-  .hero-wordmark .dot { color: var(--lime); }
-  .hero-tagline {
-    font-size: clamp(22px, 3vw, 32px);
-    font-weight: 500;
-    color: rgba(241, 245, 249, 0.9);
-    max-width: 700px;
-    margin: 0 auto 48px;
-  }
-  .hero-tagline .accent { color: var(--electric); }
 
-  /* ── DOWNLOAD BUTTONS ── */
-  .downloads {
+  /* Die zwei Baender aus Lars' Entwurf: Blau oben links, Lime unten rechts. */
+  .band { position: absolute; pointer-events: none; }
+  .band svg { display: block; width: 100%; height: 100%; }
+  .band-blue { top: 0; left: 0; width: min(46vw, 620px); height: min(22vw, 300px); }
+  .band-lime { bottom: 0; right: 0; width: min(62vw, 860px); height: min(26vw, 360px); }
+
+  header {
+    position: relative;
+    z-index: 1;
     display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
+    justify-content: flex-end;
+    padding: 28px clamp(20px, 5vw, 56px) 0;
   }
-  .btn {
-    padding: 18px 32px;
-    border-radius: 12px;
-    font-family: 'Space Grotesk', sans-serif;
+  .beta {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: var(--lime);
+    border: 2px solid var(--lime);
+    border-radius: 999px;
+    padding: 7px 18px;
+    white-space: nowrap;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px clamp(20px, 5vw, 56px) 48px;
+  }
+  .wordmark { display: block; width: min(78vw, 460px); height: auto; margin-bottom: clamp(36px, 6vw, 64px); }
+  h1 {
+    font-size: clamp(30px, 5.4vw, 60px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    max-width: 18ch;
+  }
+  @media (min-width: 900px) { h1 { max-width: none; } }
+  .lead {
+    margin-top: clamp(18px, 2.4vw, 28px);
+    font-size: clamp(17px, 2vw, 24px);
+    font-weight: 500;
+    color: var(--soft);
+    max-width: 32ch;
+  }
+  @media (min-width: 700px) { .lead { max-width: 44ch; } }
+  .claim {
+    margin-top: clamp(18px, 2.4vw, 28px);
+    font-size: clamp(22px, 3vw, 36px);
     font-weight: 700;
-    font-size: 16px;
-    letter-spacing: -0.3px;
-    cursor: pointer;
-    border: none;
-    display: inline-flex;
+    font-style: italic;
+    color: var(--lime);
+  }
+  .phase {
+    margin-top: clamp(32px, 4.5vw, 52px);
+    font-size: clamp(15px, 1.6vw, 19px);
+    font-weight: 500;
+    color: var(--soft);
+  }
+  .stores {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .store {
+    display: flex;
     align-items: center;
     gap: 12px;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); }
-  .btn-primary {
-    background: var(--lime);
-    color: var(--asphalt);
-  }
-  .btn-secondary {
-    background: var(--off-white);
-    color: var(--asphalt);
-  }
-  .btn-ghost {
-    background: transparent;
-    color: var(--off-white);
-    border: 2px solid rgba(241, 245, 249, 0.3);
-  }
-  .btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
-  .btn-icon { width: 24px; height: 24px; }
-
-  .beta-note {
-    font-size: 13px;
-    color: rgba(241, 245, 249, 0.5);
-    margin-top: 8px;
-  }
-
-  /* ── SECTIONS ── */
-  section.info {
-    padding: 120px 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  section.info-alt {
-    background: var(--concrete);
-  }
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--lime);
-    margin-bottom: 12px;
-  }
-  h2 {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(36px, 5vw, 56px);
-    letter-spacing: -1.5px;
-    line-height: 1;
-    color: var(--off-white);
-    margin-bottom: 24px;
-  }
-  h2 .accent { color: var(--lime); }
-  p.lead {
-    font-size: 19px;
-    color: rgba(241, 245, 249, 0.8);
-    max-width: 700px;
-    line-height: 1.6;
-    margin-bottom: 24px;
-  }
-
-  /* ── FEATURE GRID ── */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-top: 64px;
-  }
-  .feature {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 32px;
-    border-radius: 16px;
-    transition: transform 0.2s, background 0.2s;
-  }
-  .feature:hover {
-    transform: translateY(-4px);
-    background: rgba(163, 230, 53, 0.05);
-    border-color: rgba(163, 230, 53, 0.2);
-  }
-  .feature-icon {
-    width: 56px; height: 56px;
-    background: var(--lime);
+    min-width: 220px;
+    min-height: 64px;
+    padding: 10px 22px;
     border-radius: 14px;
+    background: var(--white);
+    color: #0B0F1A;
+    text-align: left;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .store:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); }
+  .store svg { width: 34px; height: 34px; flex: none; }
+  .store small { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; line-height: 1.2; }
+  .store strong { display: block; font-size: 21px; font-weight: 700; line-height: 1.15; }
+  .note {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    max-width: 46ch;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 28px;
-    color: var(--asphalt);
-  }
-  .feature h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: var(--off-white);
-  }
-  .feature p {
+    gap: 8px 24px;
+    padding: 20px clamp(20px, 5vw, 56px) calc(24px + env(safe-area-inset-bottom));
     font-size: 15px;
-    color: rgba(241, 245, 249, 0.7);
-    line-height: 1.6;
+    font-weight: 600;
+    color: var(--soft);
+    /* Das Lime-Band laeuft hinter der Fusszeile durch: dunkler Grund haelt
+       die Links auf jeder Breite lesbar. */
+    background: linear-gradient(to top, rgba(6, 12, 32, 0.94), rgba(6, 12, 32, 0.78) 65%, transparent);
+    padding-top: 36px;
   }
-
-  /* ── FOUNDERS ── */
-  .founders {
-    background: linear-gradient(135deg, var(--concrete) 0%, var(--asphalt) 100%);
-    padding: 120px 32px;
+  footer a { padding: 10px 2px; }
+  footer a:hover { color: var(--white); text-decoration: underline; }
+  footer .mail { color: var(--white); }
+  /* Auf schmalen Bildschirmen laeuft das Lime-Band hinter der Fusszeile:
+     dunkler Grund hinter dem Text haelt ihn lesbar. */
+  @media (max-width: 700px) {
+    .band-lime { width: 90vw; height: 34vw; opacity: 0.9; }
+    .band-blue { width: 64vw; height: 30vw; }
   }
-  .founders-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .founders-quote {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(28px, 4vw, 44px);
-    line-height: 1.15;
-    letter-spacing: -1px;
-    margin-bottom: 40px;
-  }
-  .founders-quote .lime-t { color: var(--lime); }
-  .founders-quote .electric-t { color: var(--electric); }
-  .founders-body {
-    font-size: 17px;
-    color: rgba(241, 245, 249, 0.75);
-    line-height: 1.7;
-    max-width: 700px;
-    margin: 0 auto 40px;
-  }
-  .founders-body strong { color: var(--off-white); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #0A0F1E;
-    padding: 60px 32px 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-  }
-  .footer-brand .brand-name {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 24px;
-    letter-spacing: -1px;
-    margin-bottom: 8px;
-  }
-  .footer-brand .brand-name .dot { color: var(--lime); }
-  .footer-brand p {
-    font-size: 14px;
-    color: rgba(241, 245, 249, 0.5);
-    max-width: 300px;
-  }
-  .footer-col h4 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--lime);
-    margin-bottom: 16px;
-  }
-  .footer-col a {
-    display: block;
-    font-size: 14px;
-    color: rgba(241, 245, 249, 0.6);
-    padding: 4px 0;
-    transition: color 0.15s;
-  }
-  .footer-col a:hover { color: var(--lime); }
-  .footer-bottom {
-    max-width: 1200px;
-    margin: 40px auto 0;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: rgba(241, 245, 249, 0.4);
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  @media (max-width: 768px) {
-    nav { padding: 12px 16px; }
-    .nav-links { display: none; }
-    section.info { padding: 60px 20px; }
-    .footer-content { grid-template-columns: 1fr; gap: 32px; }
-    .footer-bottom { flex-direction: column; gap: 8px; }
-  }
+  @media (prefers-reduced-motion: reduce) { .store { transition: none; } }
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="nav-logo">LINDENO<span class="dot">.</span></div>
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#founders">Story</a>
-    <a href="#download">Download</a>
+<div class="page">
+  <div class="band band-blue" aria-hidden="true">
+    <svg viewBox="0 0 620 300" preserveAspectRatio="none"><defs><linearGradient id="gb" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1B5BFF"/><stop offset="1" stop-color="#2D7DF6" stop-opacity="0.55"/></linearGradient></defs><path d="M0,0 L620,0 C430,22 190,120 0,300 Z" fill="url(#gb)" opacity="0.35"/><path d="M0,0 L560,0 C380,16 160,96 0,236 Z" fill="url(#gb)"/><path d="M0,0 L430,0 C290,10 120,62 0,150 Z" fill="#0B1533"/></svg>
   </div>
-</nav>
+  <div class="band band-lime" aria-hidden="true">
+    <svg viewBox="0 0 860 360" preserveAspectRatio="none"><defs><linearGradient id="gl" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#B2EB20" stop-opacity="0.15"/><stop offset="0.55" stop-color="#B2EB20"/><stop offset="1" stop-color="#D6FF4A"/></linearGradient></defs><path d="M860,360 L0,360 C300,340 640,230 860,0 Z" fill="url(#gl)" opacity="0.28"/><path d="M860,360 L120,360 C400,336 680,240 860,70 Z" fill="url(#gl)"/><path d="M860,360 L330,360 C560,344 740,286 860,190 Z" fill="#060C20"/></svg>
+  </div>
 
-<!-- HERO -->
-<section class="hero" id="download">
-  <div class="hero-content">
-    <div class="hero-kicker">Street Sport Club · Est. Linden 2026</div>
-    <div class="hero-wordmark">LINDENO<span class="dot">.</span></div>
-    <div class="hero-tagline"><span class="accent">Wir spielen,</span> wo wir leben.</div>
+  <header><span class="beta">BETA 2026</span></header>
 
-    <div class="downloads">
-      <a href="https://testflight.apple.com/join/ZXkqBHzm" class="btn btn-primary">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-        TestFlight Beta iOS
+  <main>
+    <img class="wordmark" src="/logo-dark.svg" alt="Lindeno" width="1985" height="243">
+    <h1>Mehr Sport. Mehr Gemeinschaft. Mehr Wir.</h1>
+    <p class="lead">Wir vernetzen Menschen, Vereine und Communities und machen lokalen Sport zum gemeinsamen Erlebnis.</p>
+    <p class="claim">Wir spielen, wo wir leben.</p>
+
+    <p class="phase" id="download">Jetzt in der Beta-Testphase</p>
+    <div class="stores">
+      <a class="store" href="https://testflight.apple.com/join/ZXkqBHzm">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        <span><small>Beta für iPhone</small><strong>TestFlight</strong></span>
       </a>
-      <a href="https://expo.dev/artifacts/eas/JqcKm1sx9Ggk3-cEbf8LkR6K7JzXlf9gjzMFqdV1S7U.apk" class="btn btn-secondary">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4482-.9993-.9993s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993s-.4482.9993-.9993.9993m-11.046 0c-.5511 0-.9993-.4482-.9993-.9993s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993s-.4482.9993-.9993.9993m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.1067L4.841 5.4545a.4161.4161 0 00-.5676-.1521.4161.4161 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
-        Android APK
+      <a class="store" href="https://expo.dev/artifacts/eas/JqcKm1sx9Ggk3-cEbf8LkR6K7JzXlf9gjzMFqdV1S7U.apk">
+        <svg viewBox="0 0 24 24" fill="#34A853" aria-hidden="true"><path d="M17.523 15.3414c-.5511 0-.9993-.4482-.9993-.9993s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993s-.4482.9993-.9993.9993m-11.046 0c-.5511 0-.9993-.4482-.9993-.9993s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993s-.4482.9993-.9993.9993m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.1067L4.841 5.4545a.4161.4161 0 00-.5676-.1521.4161.4161 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+        <span><small>Beta für Android</small><strong>APK laden</strong></span>
       </a>
     </div>
-    <div class="beta-note">Beta-Test mit Delfin TT Gang, Plattentanz und SG Limmer Tischtennis (Hannover). Play Store &amp; App Store folgen. Android: Installation aus unbekannten Quellen erlauben.</div>
-  </div>
-</section>
+    <p class="note">App Store und Google Play folgen. Android: Installation aus unbekannten Quellen erlauben.</p>
+  </main>
 
-<!-- FEATURES -->
-<section class="info" id="features">
-  <div class="section-label">Was Lindeno kann</div>
-  <h2>Tischtennis. Beach. <span class="accent">Eine Community.</span></h2>
-  <p class="lead">Lindeno bringt Outdoor-Sport zurück auf die Straße. Scanne QR-Sticker an öffentlichen Tischen und Courts, tritt Wartelisten bei, spiel Matches gegen echte Leute, sammle ELO. Alles in Echtzeit.</p>
-
-  <div class="features">
-    <div class="feature">
-      <div class="feature-icon">🏓</div>
-      <h3>Tischtennis Outdoor</h3>
-      <p>Finde Beton- und Steintische in deiner Stadt. Scanne, warte, spiel. Bo3, Bo5 oder Rundlauf.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🏐</div>
-      <h3>Beach Volleyball</h3>
-      <p>Vereins-Courts, öffentliche Anlagen, spontane Runden. Court-Rotation, Team-Finder, Sand-Report.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">⚡</div>
-      <h3>Live Ranking</h3>
-      <p>ELO je Sportart, Ranglisten für Club, Stadt und global. Sieh deine Position in Echtzeit.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🎯</div>
-      <h3>Quests & Skins</h3>
-      <p>Tägliche und wöchentliche Quests, Skins zum Freischalten. Spielst, sammelst, levelst. Rare, Epic, Legendary, Mythic.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🏆</div>
-      <h3>Turniere</h3>
-      <p>K.o., Round-Robin, Swiss, King of the Court, Americano, Mexicano. Plus Trostrunden.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🌤️</div>
-      <h3>Wetter Pro</h3>
-      <p>DWD-BrightSky-Nowcast: siehst du 1-3h im Voraus, ob dein Court bespielbar ist.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDERS -->
-<section class="founders" id="founders">
-  <div class="founders-content">
-    <div class="section-label">Story</div>
-    <div class="founders-quote">
-      „Zwei aus <span class="electric-t">Linden</span>.<br>
-      Eine App für <span class="lime-t">alle Kiez-Athleten</span>."
-    </div>
-    <p class="founders-body">
-      <strong>Patrick</strong> und <strong>Lars</strong> lernten sich 2020 im Stadtteil Hannover-Linden kennen — über Lars' Sport-App <em>Courtculture</em>. Aus dem ersten Kaffee wurde eine Freundschaft, aus sechs Jahren Austausch wurde eine gemeinsame Vision. <strong>Lindeno</strong> ist die Hommage an den Ort, an dem alles anfing. Und ein Versprechen: Wir bauen die Outdoor-Sport-Community, die uns in Hannover-Linden immer gefehlt hat — und die jetzt weltweit funktioniert.
-    </p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="info info-alt" style="text-align: center;">
-  <div class="section-label">Werde Teil</div>
-  <h2>Draußen. <span class="accent">Immer.</span></h2>
-  <p class="lead" style="margin: 24px auto 40px;">Ab sofort im Beta-Rollout. Kein Login-Zwang. Kein Bullshit. Nur Sport.</p>
-  <div class="downloads">
-    <a href="#download" class="btn btn-primary">Jetzt runterladen</a>
-    <a href="mailto:hello@lindeno.app" class="btn btn-ghost">Community werden</a>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-content">
-    <div class="footer-brand">
-      <div class="brand-name">LINDENO<span class="dot">.</span></div>
-      <p>Street Sport Club. Rooted in Linden, Hannover. Playing worldwide.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Produkt</h4>
-      <a href="#features">Features</a>
-      <a href="#download">Download</a>
-      <a href="#founders">Story</a>
-    </div>
-    <div class="footer-col">
-      <h4>Community</h4>
-      <a href="https://instagram.com/lindeno">Instagram</a>
-      <a href="https://tiktok.com/@lindeno">TikTok</a>
-      <a href="mailto:hello@lindeno.app">Kontakt</a>
-    </div>
-    <div class="footer-col">
-      <h4>Rechtliches</h4>
-      <a href="/privacy">Datenschutz</a>
-      <a href="/impressum">Impressum</a>
-      <a href="mailto:hello@lindeno.app">Support</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div>© 2026 Lindeno · Patrick Tattermann</div>
-    <div>Made in Linden, Hannover</div>
-  </div>
-</footer>
-
+  <footer>
+    <a class="mail" href="mailto:hello@lindeno.app">hello@lindeno.app</a>
+    <a href="https://instagram.com/lindeno">Instagram</a>
+    <a href="https://tiktok.com/@lindeno">TikTok</a>
+    <a href="/privacy">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+  </footer>
+</div>
 </body>
 </html>

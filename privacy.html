@@ -37,8 +37,9 @@
   }
   h1 {
     font-family: 'Archivo Black', sans-serif;
-    font-size: 48px;
+    font-size: clamp(30px, 8.2vw, 48px);
     letter-spacing: -1.5px;
+    hyphens: manual;
     line-height: 1;
     margin-bottom: 12px;
   }
@@ -80,18 +81,26 @@
 </head>
 <body>
 
-<nav><div class="nav-logo">LINDENO<span class="dot">.</span></div></nav>
+<nav><a href="/" aria-label="Lindeno – zur Startseite"><img src="/logo-dark.svg" alt="Lindeno" width="1985" height="243" style="display:block;height:26px;width:auto"></a></nav>
 
 <main>
-  <h1>Datenschutzerklärung</h1>
-  <div class="updated">Stand: 22.07.2026</div>
+  <h1>Datenschutz&shy;erklärung</h1>
+  <div class="updated">Stand: 22.11.2026</div>
+
+  <div class="contact-box">
+    <strong>Hinweis: Lindeno ist in der Beta-Testphase.</strong><br>
+    Die App wird derzeit mit ausgewählten Vereinen und Communities getestet. Funktionen können sich ändern, vorübergehend fehlen oder Fehler enthalten. Ranglisten, Punkte und Spielstände können während der Beta korrigiert oder zurückgesetzt werden. Diese Datenschutzerklärung gilt bereits für die Beta und wird mit dem Ausbau der App fortgeschrieben.
+  </div>
 
   <h2>1. Verantwortlicher</h2>
   <p>Verantwortlich für die Datenverarbeitung im Sinne der DSGVO ist:</p>
   <div class="contact-box">
-    <strong>Patrick Tattermann</strong><br>
-    [Straße Nr.]<br>
-    30449 Hannover<br>
+    <strong>Smartsecur GmbH</strong><br>
+    Am Großmarkt 2<br>
+    30453 Hannover<br>
+    Deutschland<br>
+    Geschäftsführung: Patrick Tattermann<br>
+    Telefon: <a href="tel:+491604444508">0160 4444508</a><br>
     E-Mail: <a href="mailto:hello@lindeno.app">hello@lindeno.app</a>
   </div>
 
